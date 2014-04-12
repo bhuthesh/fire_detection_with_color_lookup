@@ -1,0 +1,22 @@
+%algorithm for fire detection
+read image
+construct image histogram
+construct k-means cluster with k = 10
+
+     ----------------------       -------------------------
+    |image frame to process| ==> |fire color detction using|
+     ----------------------      |color lookup table       |
+                                  -------------------------
+                                              |
+                                              |
+                                              |
+         ------------------         ------------------------
+        | histogram analysis| <=== |  create blob fire area |
+         ------------------         ------------------------
+                   |
+        --------------------------   fire?    -----------------
+       |fire rule histogram check?| =======> |temporal analysis|
+        --------------------------    yes     -----------------
+                   |NOT FIRE?
+                   |
+                   process next frame
